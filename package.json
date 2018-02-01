@@ -1,0 +1,28 @@
+{
+  "name": "reddit-clone-mern",
+  "version": "1.0.0",
+  "description": "reddit clone created with express, react.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd front-end && npm start\" \"cd back-end && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LillianChernin/redit-clone-w-react.git"
+  },
+  "keywords": [
+    "reddit",
+    "express",
+    "react.js"
+  ],
+  "author": "Lillian Chernin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LillianChernin/redit-clone-w-react/issues"
+  },
+  "homepage": "https://github.com/LillianChernin/redit-clone-w-react#readme",
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  }
+}
