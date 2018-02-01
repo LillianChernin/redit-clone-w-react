@@ -1,8 +1,9 @@
 require('dotenv').config();
 
-var express = require('express');
-var app = express();
-var redditRouter = require('./config/routes.js');
+const express = require('express');
+const app = express();
+const redditRouter = require('./config/routes.js');
+const bodyParser = require('body-parser');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -11,9 +12,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(redditRouter);
 
 let port = process.env.PORT || 3000;
