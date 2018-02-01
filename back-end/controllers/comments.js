@@ -1,5 +1,5 @@
-var models = require('../models');
-var Comment = models.Comment;
+const models = require('../models');
+const Comment = models.Comment;
 
 const index = (req, res) => {
   models.TextPost.find({_id: req.params.post_id}, (err, textPost) => {
@@ -57,7 +57,7 @@ const update = (req, res) => {
   });
 }
 
-function destroy(req, res) {
+const destroy = (req, res) => {
   Comment.remove({_id: req.params.comment_id}, (err, comment) => {
     if (err) {
       console.log('error removing comment from db');

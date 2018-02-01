@@ -6,7 +6,7 @@ const index = (req, res) => {
     if (err) {
       res.send(err);
     }
-    else res.json(textPosts);
+    res.json(textPosts);
   });
 }
 
@@ -25,7 +25,7 @@ const show = (req, res) => {
     if (err) {
       res.send(err);
     }
-    else res.json(textPost);
+    res.json(textPost);
   })
 }
 
