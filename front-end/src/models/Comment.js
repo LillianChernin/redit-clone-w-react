@@ -21,4 +21,4 @@ class CommentModel {
   }
 }
 
-export default TodoModel
+export default CommentModel

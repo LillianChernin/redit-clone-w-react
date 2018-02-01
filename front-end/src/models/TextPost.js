@@ -21,4 +21,4 @@ class TextPostModel {
   }
 }
 
-export default TodoModel
+export default TextPostModel
