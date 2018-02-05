@@ -10,19 +10,24 @@ class PostsContainer extends Component {
     }
   }
   render() {
-    TextPostModel.all().then( (res) => {
-      this.state.posts = res.data.map((post) => {
-        return (
-          <ShortTextPost
-            _id={post._id}
-            title={post.title}
-            thumbnail_image_url={post.thumbnail_image_url}
-          />
-        )
-
+    let self = this;
+    if (this.state.posts === "") {
+      TextPostModel.all().then( (res) => {
+        let posts = res.data.map((post) => {
+          return (
+            <ShortTextPost
+              _id={post._id}
+              title={post.title}
+              thumbnail_image_url={post.thumbnail_image_url}
+            />
+          )
+        })
+        self.setState({
+          posts: posts
+        })
+        console.log(posts);
       })
-
-    })
+    }
     return (
       <div className="PostsContainer">
        <h1>Here is the posts container</h1>
